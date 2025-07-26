@@ -161,33 +161,33 @@ sudo systemctl status security-camera.service
   ```
 
 - **Permission errors?**  
-Add user to video group:  
-```bash
-sudo usermod -a -G video pi
-```
+   Add user to video group:  
+   ```bash
+   sudo usermod -a -G video pi
+   ```
 
 - **Email authentication fails?**  
-- Ensure 2FA is enabled  
-- Use generated App Password, not the regular password
+   - Ensure 2FA is enabled  
+   - Use generated App Password, not the regular password
 
 - **View logs**:  
-Real-time:  
-```bash
-sudo journalctl -u security-camera.service -f
-```
-Application logs:  
-```bash
-tail -f /home/pi/security_camera.log
-```
+   Real-time:  
+   ```bash
+   sudo journalctl -u security-camera.service -f
+   ```
+   Application logs:  
+   ```bash
+   tail -f /home/pi/security_camera.log
+   ```
 
 ## Performance Optimization
 
 - Reduce camera resolution in the script for faster processing (e.g., 320x240).
 - Increase sleep time or process every nth frame.
 - Use OpenCV GPU support:  
-```bash
-pip3 install opencv-contrib-python
-```
+   ```bash
+   pip3 install opencv-contrib-python
+   ```
 
 ## Security Considerations
 
@@ -195,14 +195,14 @@ pip3 install opencv-contrib-python
 - Use strong email app passwords.
 - Secure your network.
 - Keep system updated:
-```bash
-sudo apt update && sudo apt upgrade
-```
+   ```bash
+   sudo apt update && sudo apt upgrade
+   ```
 - Configure firewall:
-```bash
-sudo ufw enable
-sudo ufw allow ssh
-```
+   ```bash
+   sudo ufw enable
+   sudo ufw allow ssh
+   ```
 
 ## Monitoring and Maintenance
 
@@ -213,12 +213,12 @@ sudo ufw allow ssh
 
 ## File Structure
 
-```bash
-/home/pi/security_camera/
-├── security_camera.py # Main Python script
-├── config.json # Configuration file
-├── security_camera.log # Application logs
-└── detections/ # Folder for detection images
-   ├── detection_YYYYMMDD_HHMMSS.jpg
-   └── ...
-```
+   ```bash
+   /home/pi/security_camera/
+   ├── security_camera.py # Main Python script
+   ├── config.json # Configuration file
+   ├── security_camera.log # Application logs
+   └── detections/ # Folder for detection images
+      ├── detection_YYYYMMDD_HHMMSS.jpg
+      └── ...
+   ```
